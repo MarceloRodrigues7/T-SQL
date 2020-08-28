@@ -4,7 +4,7 @@ DECLARE @id INT = (SELECT TOP(1) MIN(id) FROM testeUser),
 		@soma0 FLOAT,
 		@calc FLOAT,
 		@Update DATETIME
-WHILE @id<=@MaiorId
+WHILE @id<@MaiorId
 BEGIN
 	SET @soma1 = (select SUM(valor) from testeRepeticao with(nolock) where userId=@id and status=1)
 	SET @soma0 = (select SUM(valor) from testeRepeticao with(nolock) where userId=@id and status=0)
