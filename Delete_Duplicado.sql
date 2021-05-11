@@ -3,9 +3,9 @@ FROM
 (
 SELECT *
 , DupRank = ROW_NUMBER() OVER (
-              PARTITION BY Nome_Cplus
-              ORDER BY Nome_Cplus asc
+              PARTITION BY Coluna
+              ORDER BY Coluna asc
             )
-FROM faturamento_empresa
+FROM tableDelete
 ) AS T
 WHERE DupRank > 1 
